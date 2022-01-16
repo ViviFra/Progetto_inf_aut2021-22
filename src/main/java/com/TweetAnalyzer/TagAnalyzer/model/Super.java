@@ -1,19 +1,26 @@
 package com.TweetAnalyzer.TagAnalyzer.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.time.LocalDate;
 
 public class Super {
 	
-	private final String tag;
-
-	public Super(@JsonProperty("tag")String tag) {
-		this.tag = tag;
-		JSONObject jo;
+	private LocalDate date;
+	private long id;
+	public Super(LocalDate date, long id) {
+		super();
+		this.date = date;
+		this.id = id;
 	}
-
-	public String getTag() {
-		return tag;
+	public LocalDate getDate() {
+		return date;
 	}
+	
+	public long getId() {
+		return id;
+	}
+	
+	
+	
 	
 	
 

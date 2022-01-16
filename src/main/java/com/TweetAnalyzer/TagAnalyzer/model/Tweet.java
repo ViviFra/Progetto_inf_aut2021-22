@@ -1,32 +1,19 @@
 package com.TweetAnalyzer.TagAnalyzer.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Tweet extends Super {
 
-	private final String id;
-	private final String user;
-	
-	
+	private ArrayList<String> hashtags;
 
-	public Tweet(@JsonProperty("tag")String tag, 
-			     @JsonProperty("id")String id, 
-			     @JsonProperty("username")String user) {
-		super(tag);
-		this.id = id;
-		this.user = user;
+	public Tweet(LocalDate date, long id, ArrayList<String> hashtags) {
+		super(date, id);
+		this.hashtags = hashtags;
 	}
 
-
-
-	public String getId() {
-		return id;
+	public ArrayList<String> getHashtags() {
+		return hashtags;
 	}
 
-	public String getUser() {
-		return user;
-	}
-
-
-	
 }
