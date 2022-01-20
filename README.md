@@ -1,7 +1,7 @@
 README.md
 https://github.com/ViviFra/Progetto_inf_aut2021-22
 
-![TagAnalyzer](https://ibb.co/1mjXyhh)
+![TagAnalyzer](https://github.com/ViviFra/Progetto_inf_aut2021-22/blob/main/supporti%20multimediali/TagAnalyzer%20Logo.jpg)
 
 **Introduzione**
 L’applicazione TagAnalyzer ha come principale obiettivo quello di restituire un numero nell’intervallo da cinque a cento tra gli ultimi tweet nella timeline di un determinato utente passato come parametro, tramite l’id utente univoco.
