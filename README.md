@@ -13,8 +13,11 @@ Questi tweet verranno poi processati dal programma per elaborare statistiche rel
 **Statistiche**
 
 -Numero di hashtag totali presenti nei tweet
+
 -Numero medio di hashtag per tweet
+
 -Hashtag più frequente
+
 
 
 
