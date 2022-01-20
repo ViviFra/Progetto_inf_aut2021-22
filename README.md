@@ -12,11 +12,8 @@ Questi tweet verranno poi processati dal programma per elaborare statistiche rel
 
 **Statistiche**
 
-
 -Numero di hashtag totali presenti nei tweet
-
 -Numero medio di hashtag per tweet
-
 -Hashtag più frequente
 
 
@@ -24,7 +21,6 @@ Questi tweet verranno poi processati dal programma per elaborare statistiche rel
 Sarà anche possibile filtrare i risultati della ricerca. Immettendo uno specifico hashtag infatti, il programma mostrerà soltanto i tweet dove compare quel tag:
 
 **Filtri**
-
 
 -Filtri per hashtag dei post
 
@@ -62,7 +58,7 @@ importante: prima di richiedere statistiche sui tweet, filtrare risultati ecc, r
 infatti senza salvare i dati non sarà possibile effettuarci sopra delle statistiche.
 
 
-Un tutorial sicuramente più esaustivo è disponibile in questo [video](https://github.com/ViviFra/Progetto_inf_aut2021-22/blob/main/supporti%20multimediali/JUnit%20and%20tutorial.mp4).
+Un tutorial sicuramente più esaustivo è disponibile in questo [video](https://github.com/ViviFra/Progetto_inf_aut2021-22/blob/main/supporti%20multimediali/JUnit%20and%20tutorial.mov).
 
 > Prima del tutorial vero e proprio ci sono dei test con JUnit, per chi non fosse interessato può saltare direttamente al minuto *00:30*
 
