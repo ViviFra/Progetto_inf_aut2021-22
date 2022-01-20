@@ -1,27 +1,16 @@
 package com.TweetAnalyzer.TagAnalyzer.model;
 
-import java.time.LocalDate;
-
 public class Super {
-	
-	private LocalDate date;
-	private long id;
-	public Super(LocalDate date, long id) {
-		super();
-		this.date = date;
+
+	private String id;
+
+	public Super(String id) {
+
 		this.id = id;
 	}
-	public LocalDate getDate() {
-		return date;
-	}
-	
-	public long getId() {
+
+	public String getId() {
 		return id;
 	}
-	
-	
-	
-	
-	
 
 }

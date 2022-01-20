@@ -1,75 +1,44 @@
 package com.TweetAnalyzer.TagAnalyzer.stats;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class Stats{
 	
-	public int TotHash(ArrayList<String> hashtags) {		//ritorna il numero totale degli hashtag nei 100 post
-		return (hashtags.size());
+	JSONObject data;
+	
+	public Stats(JSONObject data) {
+		this.data = data;
 	}
-	
-	public int MediHash(ArrayList<String> hashtags, int num) {
-		return (hashtags.size() / num);
-	}
-	
 
-	private class quanti{									//classe di supporto per la stats sugli hashtag più frequenti
-
-		String hashtag;
-		int cont;
+	public JSONObject seeStats() {
 		
-		public String getHashtag() {
-			return hashtag;
-		}
-
-		public int getCont() {
-			return cont;
-		}
-
-		
-		public quanti(String hashtag, int cont) {
-			this.hashtag = hashtag;
-			this.cont = cont;
-		}
-
-	}
-	
-
-
-	//( int occorrenze = Collections.frequency(hashtags, hashtags.get(i)); )
-	
-	public quanti FrequezHash(ArrayList<String> hashtags) {
-		quanti topHash = new quanti(null, 0);
-		
-		ArrayList<quanti> conthash = new ArrayList<quanti>();	//creo un ArrayList che accoglie l'hashtag e la sua ricorrenza nell'ArrayList
-		
-		for (short i = 0; i < hashtags.size(); i++) {
-			quanti raw = new quanti( hashtags.get(i), Collections.frequency(hashtags, hashtags.get(i)) );
-			conthash.add(raw);
+		int numHashtags = 0;
+        Map<String, Integer> hashMap = new HashMap<String, Integer>();		
+		JSONArray tweetList = (JSONArray) data.get("list");
+		for(int i=0;i<tweetList.length();i++) {
+			JSONObject prop = (JSONObject) tweetList.get(i);
+			JSONObject tweet = (JSONObject) prop.get("tweet");
+			JSONArray hashtags = (JSONArray) tweet.get("hashtags");
+			numHashtags += hashtags.length();
+			for (int j=0; j<hashtags.length(); j++) {
+				String hashtag = (String) hashtags.get(j);
+				if (hashMap.containsKey(hashtag)) {
+					Integer numtag = hashMap.get(hashtag);
+					hashMap.put(hashtag, numtag + 1);
+				} else {
+					hashMap.put(hashtag, 1);
+				}
 			}
-		
-		for (short j = 0; j < conthash.size(); j++) {
-			quanti sentinella = conthash.get(j);
-			//String parola = sentinella.getHashtag();
-			int conta = sentinella.getCont();
-			
-			for (int q = j+1; q<conthash.size()-j; q++) {
-				
-				quanti sentinella1 = conthash.get(q);
-				//String parola1 = sentinella1.getHashtag();
-				int conta1 = sentinella1.getCont();
-
-				if (sentinella1 == sentinella || conta < conta1) continue;
-				else topHash = sentinella;
-			}
-			
-
-			
 		}
-		
-		return topHash;
+		JSONObject response = new JSONObject();
+		response.put("hashnum",numHashtags);
+		response.put("hashaverage",(float)numHashtags/tweetList.length());		
+		response.put("hashtags", new JSONObject(hashMap));
+		return response;
 	}
-	
-
+}
 	
