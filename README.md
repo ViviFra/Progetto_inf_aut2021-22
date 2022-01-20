@@ -37,7 +37,7 @@ Una volta lanciata l’applicazione tramite SpringBoot App dal main (nella Class
 
 
 
-! ) tutte le rotte iniziano con  [http://localhost:8080](http://localhost:8080) e sono tutte rotte **GET**
+! ) tutte le rotte iniziano con  [http://localhost:8080](http://localhost:8080) e sono tutte di tipo **GET**
 
 > in caso di non funzionamento causato dall'occupazione di altre richieste alla porta di default 8080, è possibile cambiare la porta andando, all’interno del programma, nella cartella _src->main->resources->application properties_ e scrivendo in quel file: 
 > **_server.port = <numero>_** _(senza le < >)_
