@@ -1,5 +1,7 @@
 package com.TweetAnalyzer.TagAnalyzer.service;
 
+//questa interfaccia contiene metodi astratti relativi all'utilizzo dell'API e salvataggio dati
+
 import java.util.ArrayList;
 
 import com.TweetAnalyzer.TagAnalyzer.exception.NoDataException;

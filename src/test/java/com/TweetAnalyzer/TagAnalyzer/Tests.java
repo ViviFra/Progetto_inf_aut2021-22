@@ -15,6 +15,8 @@ import com.TweetAnalyzer.TagAnalyzer.exception.WrongNumOfPostException;
 import com.TweetAnalyzer.TagAnalyzer.service.ApiCall;
 import com.TweetAnalyzer.TagAnalyzer.service.TweetData;
 
+//classe di test per metodi e eccezioni
+
 @SpringBootTest
 public class Tests {
 
@@ -34,6 +36,8 @@ public class Tests {
 	void destroy() throws Exception {
 	}
 
+	//test sulla corretta composizione dell'url
+	
 	@Test
 	@DisplayName("Controllo correttezza url")
 	void testUrl() throws WrongNumOfPostException {
@@ -41,6 +45,8 @@ public class Tests {
 				"https://api.twitter.com/2/users/270839361/tweets?tweet.fields=entities&exclude=retweets,replies&max_results=100");
 	}
 
+	//test sulla corretta visualizzazione di metadati
+	
 	@Test
 	@DisplayName("Controllo correttezza metadati")
 	void testMetadata() {
@@ -48,6 +54,8 @@ public class Tests {
 				"{\"list\":{\"tweet\":{\"hashtags\":\"ArrayList<String>\",\"text\":\"String\",\"id\":\"long\"}}}");
 	}
 
+	//test sull'eccezione relativa al numero di post passati come parametro, per difetto o eccesso
+	
 	@Test
 	@DisplayName("Controllo correttezza WrongNumOfPostException")
 	void testWNOPE() throws WrongNumOfPostException {
@@ -66,6 +74,8 @@ public class Tests {
 		}
 	}
 
+	//test sull'eccezione relativa ad account senza contenuti propri
+	
 	@Test
 	@DisplayName("Controllo correttezza IsEmptyException")
 	void testIEE() throws NoDataException {

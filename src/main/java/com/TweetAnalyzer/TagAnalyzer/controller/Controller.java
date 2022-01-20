@@ -12,10 +12,14 @@ import com.TweetAnalyzer.TagAnalyzer.service.ApiCall;
 import com.TweetAnalyzer.TagAnalyzer.service.TweetData;
 import com.TweetAnalyzer.TagAnalyzer.stats.Stats;
 
+// classe utilizzata per la gestione delle rotte
+
 @RestController
 public class Controller {
 
 	ApiCall call;
+	
+	// rotta GET che salva i "max_results" tweet dell'utente richiesto "id"
 
 	@GetMapping(value = "/tweet/get/timeline")
 	public ResponseEntity<Object> getData(@RequestParam(name = "id") String idtopass,
@@ -23,6 +27,8 @@ public class Controller {
 		call = new ApiCall(idtopass, num);
 		return new ResponseEntity<>(call.saveTweets(), HttpStatus.OK);
 	}
+	
+	// rotta GET che ci mostra i metadati con i quali andremo a lavorare
 
 	@GetMapping(value = "/tweet/metadata")
 	public ResponseEntity<Object> seeMeta() {
@@ -30,6 +36,8 @@ public class Controller {
 		return new ResponseEntity<>(meta.seeMetaData().toString(), HttpStatus.OK);
 	}
 
+	// rotta GET che ci mostra i dati precedentemente salvati sui quali andremo a lavorare
+	
 	@GetMapping(value = "/tweet/data")
 	public ResponseEntity<Object> seeData() {
 		if (call == null) {
@@ -39,6 +47,8 @@ public class Controller {
 		TweetData data = new TweetData(call.getTweets());
 		return new ResponseEntity<>(data.seeData(null).toString(), HttpStatus.OK);
 	}
+	
+	// rotta GET che ci mostra le statistiche sui tweet salvati
 
 	@GetMapping(value = "/tweet/tag/stats")
 	public ResponseEntity<Object> seeStats() {
@@ -50,6 +60,8 @@ public class Controller {
 		Stats stats = new Stats(data.seeData(null));
 		return new ResponseEntity<>(stats.seeStats().toString(), HttpStatus.OK);
 	}
+	
+	// rotta GET che ci restituisce i tweet con un determinato "tag"
 
 	@GetMapping(value = "/tweet/data/tag/filter")
 	public ResponseEntity<Object> filterTag(@RequestParam(name = "tag") String tag) {

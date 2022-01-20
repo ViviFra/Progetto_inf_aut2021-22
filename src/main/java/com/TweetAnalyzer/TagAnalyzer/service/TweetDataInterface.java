@@ -1,5 +1,7 @@
 package com.TweetAnalyzer.TagAnalyzer.service;
 
+//questa interfaccia contiene metodi astratti relativi alla gestione di dati e metadati
+
 import org.json.JSONObject;
 
 public interface TweetDataInterface {

@@ -8,6 +8,7 @@ import org.json.JSONObject;
 
 import com.TweetAnalyzer.TagAnalyzer.model.Tweet;
 
+//classe che implementa TweetDataInterface
 
 public class TweetData implements TweetDataInterface {
 
@@ -20,6 +21,8 @@ public class TweetData implements TweetDataInterface {
 		this.tweets = tweets;
 	}
 
+	//metodo che mostra i metadati con i quali andremo a lavorare
+	
 	@Override
 	public JSONObject seeMetaData() {
 		JSONObject meta = new JSONObject();
@@ -37,6 +40,8 @@ public class TweetData implements TweetDataInterface {
 		return meta;
 	}
 
+	//metodo che mostra i dati precedentemente salvati ed eventualmente li filtra
+	
 	@Override
 	public JSONObject seeData(String tag) {
 

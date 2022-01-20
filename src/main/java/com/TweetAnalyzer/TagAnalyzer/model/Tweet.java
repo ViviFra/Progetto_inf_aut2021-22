@@ -1,5 +1,7 @@
 package com.TweetAnalyzer.TagAnalyzer.model;
 
+// classe contente i paramenti a noi utili per modellare il Tweet
+
 import java.util.ArrayList;
 
 public class Tweet extends Super {

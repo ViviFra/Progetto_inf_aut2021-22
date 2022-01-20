@@ -6,6 +6,8 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+//classe riguardante le statistiche sui tweet
+
 public class Stats{
 	
 	JSONObject data;
@@ -14,6 +16,8 @@ public class Stats{
 		this.data = data;
 	}
 
+	//metodo che effettua e restituisce le statistiche sui tweet
+	
 	public JSONObject seeStats() {
 		
 		int numHashtags = 0;

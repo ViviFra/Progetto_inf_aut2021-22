@@ -1,6 +1,7 @@
 package com.TweetAnalyzer.TagAnalyzer.service;
 
 import java.io.BufferedReader;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -14,6 +15,8 @@ import org.json.JSONObject;
 import com.TweetAnalyzer.TagAnalyzer.exception.NoDataException;
 import com.TweetAnalyzer.TagAnalyzer.exception.WrongNumOfPostException;
 import com.TweetAnalyzer.TagAnalyzer.model.Tweet;
+
+//classe che implementa ApiCallInterface
 
 public class ApiCall implements ApiCallInterface {
 
@@ -31,6 +34,8 @@ public class ApiCall implements ApiCallInterface {
 		this.num = num;
 	}
 
+	// metodo che costruisce l'url di chiamata all'api
+
 	@Override
 	public String buildApiurl() throws WrongNumOfPostException {
 		if (num > 4 && num < 101) {
@@ -41,6 +46,8 @@ public class ApiCall implements ApiCallInterface {
 		}
 		return apifinal;
 	}
+
+	// metodo che salva i tweet precedentemente ottenuti
 
 	@Override
 	public String saveTweets() throws NoDataException, WrongNumOfPostException {
