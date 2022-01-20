@@ -62,7 +62,7 @@ importante: prima di richiedere statistiche sui tweet, filtrare risultati ecc, r
 infatti senza salvare i dati non sarà possibile effettuarci sopra delle statistiche.
 
 
-Un tutorial sicuramente più esaustivo è disponibile in questo video.
+Un tutorial sicuramente più esaustivo è disponibile in questo [video](https://github.com/ViviFra/Progetto_inf_aut2021-22/blob/main/supporti%20multimediali/JUnit%20and%20tutorial.mp4).
 
 > Prima del tutorial vero e proprio ci sono dei test con JUnit, per chi non fosse interessato può saltare direttamente al minuto *00:30*
 
